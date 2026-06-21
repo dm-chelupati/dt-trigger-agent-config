@@ -23,6 +23,7 @@ jobs:
 
       - name: Install SRE Agent templates
         run: |
+          rm -rf /tmp/sre-agent
           git clone --depth 1 https://github.com/microsoft/sre-agent.git /tmp/sre-agent
           echo "/tmp/sre-agent/sreagent-templates/bin" >> $GITHUB_PATH
 
