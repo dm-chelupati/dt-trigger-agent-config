@@ -38,6 +38,4 @@ jobs:
       - name: Verify deployment
         run: |
           SUB=$(az account show --query id -o tsv)
-          AGENT_NAME=$(jq -r '.agentName' agent.json)
-          AGENT_RG=$(jq -r '.resourceGroup' agent.json)
-          /tmp/sre-agent/sreagent-templates/bin/verify-agent.sh "$SUB" "$AGENT_RG" "$AGENT_NAME"
+          /tmp/sre-agent/sreagent-templates/bin/verify-agent.sh "$SUB" "rg-demo1-dt-snow" "demo1-dt-snow"
