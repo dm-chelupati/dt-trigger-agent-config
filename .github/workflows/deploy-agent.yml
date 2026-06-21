@@ -1,0 +1,51 @@
+name: Deploy SRE Agent
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'agent.json'
+      - 'config/**'
+      - 'automations/**'
+      - 'data/**'
+      - 'connectors.json'
+      - 'tool-permissions.json'
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Install SRE Agent templates
+        run: |
+          git clone --depth 1 https://github.com/microsoft/sre-agent.git /tmp/sre-agent
+          echo "/tmp/sre-agent/sreagent-templates/bin" >> $GITHUB_PATH
+
+      - name: Write connector secrets
+        run: |
+          echo "DYNATRACE_BEARER_TOKEN=${{ secrets.DYNATRACE_BEARER_TOKEN }}" > connectors.secrets.env
+          echo "SERVICENOW_PASSWORD=${{ secrets.SERVICENOW_PASSWORD }}" >> connectors.secrets.env
+
+      - name: Deploy agent
+        run: |
+          /tmp/sre-agent/sreagent-templates/bin/deploy.sh . --force
+
+      - name: Verify deployment
+        run: |
+          SUB=$(az account show --query id -o tsv)
+          AGENT_NAME=$(jq -r '.agentName' agent.json)
+          AGENT_RG=$(jq -r '.resourceGroup' agent.json)
+          /tmp/sre-agent/sreagent-templates/bin/verify-agent.sh "$SUB" "$AGENT_RG" "$AGENT_NAME"
