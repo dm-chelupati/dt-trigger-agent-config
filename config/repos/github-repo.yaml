@@ -1,0 +1,5 @@
+name: github-repo
+spec:
+  url: https://github.com/dm-chelupati/contoso-trading
+  type: github
+  branch: main

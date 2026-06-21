@@ -1,0 +1,29 @@
+[
+  {
+    "name": "enterprise-architecture-md",
+    "type": "KnowledgeFile",
+    "displayName": "enterprise-architecture-md",
+    "sourceUrl": "",
+    "metadata": {},
+    "fileSize": 0,
+    "localPath": "/tmp/demo1-export-files/knowledge-items/enterprise-architecture-md"
+  },
+  {
+    "name": "incident-report-template-md",
+    "type": "KnowledgeFile",
+    "displayName": "incident-report-template-md",
+    "sourceUrl": "",
+    "metadata": {},
+    "fileSize": 0,
+    "localPath": "/tmp/demo1-export-files/knowledge-items/incident-report-template-md"
+  },
+  {
+    "name": "enterprise-runbook-md",
+    "type": "KnowledgeFile",
+    "displayName": "enterprise-runbook-md",
+    "sourceUrl": "",
+    "metadata": {},
+    "fileSize": 0,
+    "localPath": "/tmp/demo1-export-files/knowledge-items/enterprise-runbook-md"
+  }
+]

@@ -1,0 +1,24 @@
+metadata:
+  name: snow-p1p2
+spec:
+  incidentPlatform: ServiceNow
+  impactedService: ''
+  priorities:
+  - '1'
+  - '2'
+  incidentType: ''
+  alertId: ''
+  titleContains: ''
+  titleContainsAll: []
+  titleContainsAny: []
+  titleNotContains: []
+  agentMode: review
+  handlingAgent: dynatrace-investigator
+  owningTeamId: ''
+  owningTeamIds: []
+  maxAutomatedInvestigationAttempts: 3
+  mergeEnabled: true
+  mergeWindowHours: 1
+  createdAt: '2026-06-17T12:41:53.0513328Z'
+  updatedAt: '2026-06-20T17:27:29.0225707Z'
+  isEnabled: true

@@ -1,0 +1,26 @@
+[
+  {
+    "filename": "knowledge_enterprise-architecture-md.md",
+    "mimeType": "application/octet-stream",
+    "fileSize": 0,
+    "indexStatus": "indexed",
+    "triggerIndexing": true,
+    "localPath": "/tmp/demo1-export/data/knowledge/knowledge_enterprise-architecture-md.md"
+  },
+  {
+    "filename": "knowledge_enterprise-runbook-md.md",
+    "mimeType": "application/octet-stream",
+    "fileSize": 0,
+    "indexStatus": "indexed",
+    "triggerIndexing": true,
+    "localPath": "/tmp/demo1-export/data/knowledge/knowledge_enterprise-runbook-md.md"
+  },
+  {
+    "filename": "knowledge_incident-report-template-md.md",
+    "mimeType": "application/octet-stream",
+    "fileSize": 0,
+    "indexStatus": "indexed",
+    "triggerIndexing": true,
+    "localPath": "/tmp/demo1-export/data/knowledge/knowledge_incident-report-template-md.md"
+  }
+]
