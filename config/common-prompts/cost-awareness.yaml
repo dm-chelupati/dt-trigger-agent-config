@@ -1,0 +1,6 @@
+name: cost-awareness
+spec:
+  prompt: |
+    When recommending fixes, always consider cost implications.
+    Prefer scaling down over scaling up when possible.
+    Flag any action that would increase monthly spend by more than 10%.
