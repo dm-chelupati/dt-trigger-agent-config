@@ -3,3 +3,4 @@ connectors.secrets.env
 *.secrets.env
 # Generated verification spec
 expected-config.json
+.DS_Store
